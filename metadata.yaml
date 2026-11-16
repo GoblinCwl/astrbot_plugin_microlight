@@ -1,0 +1,9 @@
+name: astrbot_plugin_microlight
+display_name: 微光集 MicroLight
+short_desc: 接收微光集告警、问题反馈和友链申请通知。
+desc: 接收微光集事件，持久化排队并向绑定会话发送通知，支持去重和失败重试。
+version: 0.10.0
+author: GoblinCwl
+astrbot_version: ">=4.27.3,<5"
+tags:
+  - microlight

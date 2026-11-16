@@ -1,0 +1,59 @@
+{
+  "microlight_url": {
+    "type": "string",
+    "default": "https://goblincwl.site",
+    "description": "MicroLight 本站地址",
+    "hint": "根地址，不包含 /api、查询参数或密钥；用于管理员按需查询和操作本站 API。"
+  },
+  "enabled": {
+    "type": "bool",
+    "default": false,
+    "description": "启用微光集通知"
+  },
+  "api_token": {
+    "type": "string",
+    "default": "",
+    "description": "MicroLight API Token",
+    "hint": "在星枢 → 账户 → 本站 API 中生成，用于访问本站 API，并校验通知；重置后同步更新此值。"
+  },
+  "admin_uids": {
+    "type": "list",
+    "default": [],
+    "description": "允许操作插件的平台 UID"
+  },
+  "notify_umo": {
+    "type": "string",
+    "default": "",
+    "description": "通知会话",
+    "hint": "推荐由管理员在目标会话使用 /microlight_bind 绑定。"
+  },
+  "record_context": {
+    "type": "bool",
+    "default": true,
+    "description": "将通知写入绑定会话上下文"
+  },
+  "template_alerts": {
+    "type": "text",
+    "default": "[微光集 · 告警中心] {title}\n编号：{recordId}\n级别：{level}\n状态：{status}\n{summary}\n时间：{occurredAt}",
+    "description": "告警通知模板",
+    "hint": "纯文本，可换行。变量：{title} 标题、{summary} 内容、{status} 状态、{recordId} 业务编号、{occurredAt} 时间、{category} 分类、{level} 中文级别、{id} 事件编号、{kind} 类型。留空使用默认模板，未知变量保持原样。"
+  },
+  "template_feedback": {
+    "type": "text",
+    "default": "[微光集 · 问题反馈] {title}\n编号：{recordId}\n状态：{status}\n{summary}\n时间：{occurredAt}",
+    "description": "反馈通知模板",
+    "hint": "纯文本，可换行。变量：{title} 标题、{summary} 内容、{status} 状态、{recordId} 业务编号、{occurredAt} 时间、{category} 分类、{level} 中文级别、{id} 事件编号、{kind} 类型。留空使用默认模板，未知变量保持原样。"
+  },
+  "template_friends": {
+    "type": "text",
+    "default": "[微光集 · 友链申请] {title}\n编号：{recordId}\n状态：{status}\n{summary}\n时间：{occurredAt}",
+    "description": "友链通知模板",
+    "hint": "纯文本，可换行。变量：{title} 标题、{summary} 内容、{status} 状态、{recordId} 业务编号、{occurredAt} 时间、{category} 分类、{level} 中文级别、{id} 事件编号、{kind} 类型。留空使用默认模板，未知变量保持原样。"
+  },
+  "tool_persona": {
+    "type": "string",
+    "default": "",
+    "description": "启用 MicroLight 工具的角色",
+    "hint": "填写角色名称。加载插件时仅向该角色现有工具白名单追加 MicroLight 工具，不修改其他工具；留空不修改角色。每个工具仍校验 admin_uids。"
+  }
+}
